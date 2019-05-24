@@ -74,7 +74,7 @@ users:
         size:     [1400, 900]
     ubiz_Owner:
         broker:   ubiz
-        homepage: "http://test.ubiz.com.ua/prozorro"
+        homepage: "http://prozorro.morepy.com/prozorro"
         login:    tender_owner@yopmail.com
         password: 123456
         browser:  chrome
@@ -82,7 +82,7 @@ users:
         size:     [1280, 1000]
     ubiz_Provider1:
         broker:   ubiz
-        homepage: "http://test.ubiz.com.ua/prozorro"
+        homepage: "http://prozorro.morepy.com/prozorro"
         login:    tender_provider@yopmail.com
         password: 123456
         browser:  chrome
@@ -90,7 +90,7 @@ users:
         size:     [1280, 1000]
     ubiz_Provider2:
         broker:   ubiz
-        homepage: "http://test.ubiz.com.ua/prozorro"
+        homepage: "http://prozorro.morepy.com/prozorro"
         login:    tender_provider1@yopmail.com
         password: 123456
         browser:  chrome
@@ -98,7 +98,7 @@ users:
         size:     [1280, 1000]
     ubiz_Viewer:
         broker:   ubiz
-        homepage: "http://test.ubiz.com.ua/prozorro"
+        homepage: "http://prozorro.morepy.com/prozorro"
         browser:  chrome
         position: [0, 500]
         size:     [1280, 1000]
