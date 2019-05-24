@@ -95,24 +95,39 @@ ubiz:
             tender:  [0, 20]
         openeu:
             accelerator: 1440
-            tender:  [0, 50]
+            tender:  [0, 65]
         openua:
-            accelerator: 2880
-            tender:  [0, 45]
+            accelerator: 1440
+            tender:  [0, 60]
         belowThreshold:
-            accelerator: 550
-            enquiry: [0, 80]
+            accelerator: 1440
+            enquiry: [0, 20]
             tender:  [0, 15]
+        negotiation:
+            accelerator: 720
+            enquiry: [0, 20]
+            tender:  [0, 20]
+        open_esco:
+            accelerator: 1440
+            enquiry: [0, 20]
+            tender:  [0, 40]
+        open_competitive_dialogue:
+            accelerator: 1440
+            tender:  [0, 75]
+        openua_defense:
+            accelerator: 720
+            tender:  [0, 50]
     keywords_file: ubiz
-    homepage: 'http://test.ubiz.com.ua/prozorro'
-    buy:      'http://test.ubiz.com.ua/prozorro/tender/buy'
-    plans:    'http://test.ubiz.com.ua/prozorro/plan-view/index'
+    homepage: 'http://prozorro.morepy.com/prozorro'
+    buy:      'http://prozorro.morepy.com/prozorro/tender/buy'
+    plans:    'http://prozorro.morepy.com/prozorro/plan-view'
     roles:
         provider:       ubiz_Provider1
         provider1:      ubiz_Provider2
+        provider2:      ubiz_Provider3
         tender_owner:   ubiz_Owner
         viewer:         ubiz_Viewer
-    timeout_on_wait: 10
+    timeout_on_wait: 120
 avi:
     intervals:
         default:
