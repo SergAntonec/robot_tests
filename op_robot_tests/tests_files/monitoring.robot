@@ -11,12 +11,15 @@ ${MODE}              belowThreshold
 
 ${NUMBER_OF_ITEMS}   ${1}
 ${NUMBER_OF_LOTS}    ${1}
-${NUMBER_OF_MILESTONES}  ${0}
+${NUMBER_OF_MILESTONES}  ${1}
 ${TENDER_MEAT}       ${True}
 ${LOT_MEAT}          ${True}
 ${ITEM_MEAT}         ${True}
 ${MOZ_INTEGRATION}   ${False}
 ${VAT_INCLUDED}     ${True}
+${ROAD_INDEX}       ${False}
+${GMDN_INDEX}       ${False}
+${PLAN_TENDER}      ${True}
 
 *** Test Cases ***
 Можливість оголосити тендер

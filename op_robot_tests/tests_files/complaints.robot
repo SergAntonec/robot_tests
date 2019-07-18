@@ -11,12 +11,15 @@ ${VAT_INCLUDED}     ${True}
 
 ${NUMBER_OF_ITEMS}  ${1}
 ${NUMBER_OF_LOTS}   ${1}
-${NUMBER_OF_MILESTONES}  ${0}
+${NUMBER_OF_MILESTONES}  ${1}
 ${TENDER_MEAT}      ${0}
 ${ITEM_MEAT}        ${0}
 ${LOT_MEAT}         ${0}
 ${lot_index}        ${0}
 ${award_index}      ${0}
+${ROAD_INDEX}       ${False}
+${GMDN_INDEX}       ${False}
+${PLAN_TENDER}      ${True}
 
 *** Test Cases ***
 
