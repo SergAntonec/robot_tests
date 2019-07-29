@@ -7,6 +7,8 @@ Resource           resource.robot
 *** Variables ***
 ${ERROR_MESSAGE}=  Calling method 'get_tender' failed: ResourceGone: {"status": "error", "errors": [{"location": "url", "name": "tender_id", "description": "Archived"}]}
 
+${ERROR_PLAN_MESSAGE}=  Calling method 'get_plan' failed: ResourceGone: {"status": "error", "errors": [{"location": "url", "name": "plan_id", "description": "Archived"}]}
+
 *** Keywords ***
 Можливість оголосити тендер
   ${file_path}=  Get Variable Value  ${ARTIFACT_FILE}  artifact.yaml
@@ -61,7 +63,7 @@ ${ERROR_MESSAGE}=  Calling method 'get_tender' failed: ResourceGone: {"status": 
   ${first_stage}=  Run As  ${provider2}  Пошук тендера по ідентифікатору  ${TENDER['TENDER_UAID']}
   ${tender_data}=  test_tender_data_selection  ${period_intervals}  ${tender_parameters}  ${submissionMethodDetails}  tender_data=${first_stage}
   ${adapted_data}=  Адаптувати дані для оголошення тендера  ${tender_data}
-  ${TENDER_UAID}=  Run As  ${tender_owner}  Створити тендер  ${adapted_data}
+  ${TENDER_UAID}=  Run As  ${tender_owner}  Створити тендер другого етапу  ${adapted_data}
   Set To Dictionary  ${USERS.users['${tender_owner}']}  initial_data=${adapted_data}
   Set To Dictionary  ${TENDER}  TENDER_UAID=${TENDER_UAID}
   Дочекатись дати початку періоду уточнення  ${tender_owner}  ${TENDER_UAID}
@@ -318,7 +320,11 @@ ${ERROR_MESSAGE}=  Calling method 'get_tender' failed: ResourceGone: {"status": 
   \  ${internalid}=  Get From Dictionary  ${plans_feed_item}  id
   \  ${date_modified}=  Get From Dictionary  ${plans_feed_item}  dateModified
   \  Log To Console  - Читання плану з id ${internalid} та датою модифікації ${date_modified}
-  \  Run As  ${username}  Отримати план по внутрішньому ідентифікатору  ${internalid}
+  \  ${status}=  Run Keyword And Return Status  Отримати план по внутрішньому ідентифікатору  ${username}  ${internalid}
+  \  Run Keyword If  ${status} == ${False}
+  \  ...  Run Keyword And Expect Error  ${ERROR_PLAN_MESSAGE}  Отримати план по внутрішньому ідентифікатору  ${username}  ${internalid}
+  \  Run Keyword If  ${status} == ${True}
+  \  ...  Run As  ${username}  Отримати план по внутрішньому ідентифікатору  ${internalid}
 
 
 Можливість прочитати договори для користувача ${username}
